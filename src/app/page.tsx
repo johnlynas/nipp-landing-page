@@ -57,28 +57,6 @@ function Hero() {
             </p>
           </Reveal>
         </div>
-
-        <div className="md:col-span-7">
-          <Reveal delay={120}>
-            {/* <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.08),0_24px_64px_-24px_rgba(15,23,42,0.28)]">
-              <div className="flex h-9 items-center gap-2 border-b border-slate-200 bg-white px-4" aria-hidden>
-                <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
-                <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
-                <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
-              </div>
-              <div className="relative aspect-[16/10]">
-                <Image
-                  src="/img/admin-dashboard.png"
-                  alt="The Property NI admin dashboard with metrics and activity overview"
-                  width={1800}
-                  height={1087}
-                  priority
-                  className="absolute inset-0 h-full w-full object-cover object-top"
-                />
-              </div>
-            </div> */}
-          </Reveal>
-        </div>
       </div>
     </section>
   );
