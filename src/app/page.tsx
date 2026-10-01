@@ -45,14 +45,24 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="border-b border-slate-200 bg-white">
+    <section id="top" className="bg-navy-900 text-slate-100">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 pt-14 sm:px-8 md:grid-cols-12 md:gap-10 md:pb-24 md:pt-20 lg:gap-14">
         <div className="md:col-span-5">
           <Reveal>
-            <h1 className="text-4xl font-semibold leading-[1.08] tracking-tighter text-slate-900 sm:text-5xl">
-              One portal for every role
-            </h1>
-            <p className="mt-5 max-w-[46ch] text-lg leading-relaxed text-slate-600">
+            <div className="flex items-center gap-4">
+              <Image
+                src="/img/logo.png"
+                alt="Property NI logo"
+                width={68}
+                height={74}
+                priority
+                className="h-10 w-auto shrink-0 sm:h-12"
+              />
+              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                One portal for every role
+              </h1>
+            </div>
+            <p className="mt-4 max-w-[65ch] leading-relaxed text-slate-300">
               A role-based workspace for multi-tenant property operations: dashboards, calendar, organisation chart, notifications and people administration.
             </p>
           </Reveal>
