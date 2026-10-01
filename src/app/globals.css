@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+/* Property NI brand tokens (kept in sync with the portal's own globals.css) */
+@theme {
+  /* Dark chrome: navy rails, footer, security band */
+  --color-navy-950: #121c30;
+  --color-navy-900: #16223a;
+  --color-navy-850: #1b2a4a;
+  --color-navy-800: #24355c;
+  --color-navy-700: #3a4f7a;
+
+  /* The single accent: primary CTA + focus only. Amber never carries white text. */
+  --color-accent: #f5a623;
+  --color-accent-ink: #1e293b;
+  --color-accent-strong: #c2741a;
+
+  /* Ink */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  /* Semantic (form states) */
+  --color-danger: #dc3545;
+  --color-danger-ink: #991b1b;
+  --color-danger-tint: #fef2f2;
+  --color-danger-border: #fecaca;
+
+  --font-sans: var(--font-inter), ui-sans-serif, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-slate-900);
+}
+
+::selection {
+  background: #fde8c2;
+  color: #1e293b;
+}
+
+/* Scroll-reveal transition (driven by the Reveal component) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

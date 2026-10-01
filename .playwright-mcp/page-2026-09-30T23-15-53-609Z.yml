@@ -1,0 +1,168 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - link "Property NI Portal" [ref=e5] [cursor=pointer]:
+        - /url: "#top"
+        - generic [ref=e6]: Property NI
+        - generic [ref=e7]: Portal
+      - navigation "Main" [ref=e8]:
+        - link "Inside the portal" [ref=e9] [cursor=pointer]:
+          - /url: "#product"
+        - link "Onboarding" [ref=e10] [cursor=pointer]:
+          - /url: "#access"
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: "#contact"
+        - link "Request access" [ref=e12] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e14]:
+      - generic [ref=e16]:
+        - heading "One portal for every role" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Property NI gives multi-tenant organisations a single sign-in, strict role-based access, and the daily tools to match.
+        - generic [ref=e19]:
+          - link "Request access" [ref=e20] [cursor=pointer]:
+            - /url: "#contact"
+          - link "See it in use" [ref=e21] [cursor=pointer]:
+            - /url: "#product"
+      - img "The Property NI admin dashboard with metrics and activity overview" [ref=e30]
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - heading "What the portal looks like in use" [level=2] [ref=e34]
+        - paragraph [ref=e35]: "Eight views from a working environment. Each one shows a real screen, not a mock: sign-in, both dashboards, the calendar, the organisation chart, system health, notifications and people administration."
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - figure [ref=e39]:
+            - img "Property NI sign-in page" [ref=e46]
+          - generic [ref=e48]:
+            - paragraph [ref=e49]: SCREEN 01 / 8
+            - heading "Secure sign-in" [level=3] [ref=e50]
+            - paragraph [ref=e51]: One entry point to the portal. Role-based authentication means every person signs in to exactly the part of the workflow they are authorised for, with automatic sign-out after inactivity.
+        - generic [ref=e52]:
+          - figure [ref=e54]:
+            - img "Property NI admin dashboard" [ref=e61]
+          - generic [ref=e63]:
+            - paragraph [ref=e64]: SCREEN 02 / 8
+            - heading "Admin dashboard" [level=3] [ref=e65]
+            - paragraph [ref=e66]: "A live overview of the organisation at a glance: people, roles, activities and operational metrics for the administrators who run things behind the scenes."
+        - generic [ref=e67]:
+          - figure [ref=e69]:
+            - img "Property NI member workspace" [ref=e76]
+          - generic [ref=e78]:
+            - paragraph [ref=e79]: SCREEN 03 / 8
+            - heading "Member workspace" [level=3] [ref=e80]
+            - paragraph [ref=e81]: "A focused, read-only workspace for team members: the shared calendar, the organisation chart and the notifications that matter to their role, nothing more."
+        - generic [ref=e82]:
+          - figure [ref=e84]:
+            - img "Shared calendar in month view with an event opened" [ref=e91]
+          - generic [ref=e93]:
+            - paragraph [ref=e94]: SCREEN 04 / 8
+            - heading "Shared calendar" [level=3] [ref=e95]
+            - paragraph [ref=e96]: Every team on one schedule. Administrators create and edit events; members browse month, week or day views and open any event for full details.
+        - generic [ref=e97]:
+          - figure [ref=e99]:
+            - img "Organisation chart with connected roles" [ref=e106]
+          - generic [ref=e108]:
+            - paragraph [ref=e109]: SCREEN 05 / 8
+            - heading "Organisation chart" [level=3] [ref=e110]
+            - paragraph [ref=e111]: "The structure of the organisation inside the portal itself: who holds which role and how teams connect to each other, kept current alongside the people it describes."
+        - generic [ref=e112]:
+          - figure [ref=e114]:
+            - img "System health status board" [ref=e121]
+          - generic [ref=e123]:
+            - paragraph [ref=e124]: SCREEN 06 / 8
+            - heading "System health" [level=3] [ref=e125]
+            - paragraph [ref=e126]: A live view of backend services and dependency status, so operations can spot a degraded component before users ever notice it.
+        - generic [ref=e127]:
+          - figure [ref=e129]:
+            - img "Notifications feed listing recent alerts" [ref=e136]
+          - generic [ref=e138]:
+            - paragraph [ref=e139]: SCREEN 07 / 8
+            - heading "Notifications" [level=3] [ref=e140]
+            - paragraph [ref=e141]: Role-aware in-app notifications keep people up to date with changes and updates that concern their position in the organisation, without anyone having to ask.
+        - generic [ref=e142]:
+          - figure [ref=e144]:
+            - img "User administration table with roles and status" [ref=e151]
+          - generic [ref=e153]:
+            - paragraph [ref=e154]: SCREEN 08 / 8
+            - heading "People administration" [level=3] [ref=e155]
+            - paragraph [ref=e156]: Invite people, assign roles and manage memberships from one screen. When a new user signs in, they land directly in the workspace their role belongs to.
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - paragraph [ref=e161]: Access is granted per organisation and scoped by role. Tell us who you are and what your team needs, and we handle the rest.
+      - list [ref=e162]:
+        - listitem [ref=e163]:
+          - generic [ref=e164]:
+            - text: "01"
+            - heading "Get your invitation" [level=3] [ref=e165]
+            - paragraph [ref=e166]: Send us your details below. We set up your organisation and invite you to the portal.
+        - listitem [ref=e167]:
+          - generic [ref=e168]:
+            - text: "02"
+            - heading "Your team follows you in" [level=3] [ref=e169]
+            - paragraph [ref=e170]: Members, managers and administrators join under the same roof, each with their own role.
+        - listitem [ref=e171]:
+          - generic [ref=e172]:
+            - text: "03"
+            - heading "Sign in once" [level=3] [ref=e173]
+            - paragraph [ref=e174]: A single sign-in lands every person directly in the workspace their role belongs to.
+        - listitem [ref=e175]:
+          - generic [ref=e176]:
+            - text: "04"
+            - heading "Work within your permissions" [level=3] [ref=e177]
+            - paragraph [ref=e178]: What a role can see and change is fixed at the system level, and audited across the board.
+    - generic [ref=e180]:
+      - generic [ref=e182]:
+        - heading "Tell us who you are and how your team would use it" [level=2] [ref=e183]
+        - paragraph [ref=e184]: "Leave an email address or a mobile phone number (or both) and we will come back to you about access"
+      - generic [ref=e191]:
+        - generic [ref=e192]:
+          - generic [ref=e193]:
+            - generic [ref=e194]: Full name
+            - textbox "Full name" [ref=e195]:
+              - /placeholder: Alex McAllister
+          - generic [ref=e196]:
+            - generic [ref=e197]: Organisation
+            - textbox "Your organisation" [ref=e198]
+          - generic [ref=e199]:
+            - generic [ref=e200]: Email address
+            - textbox "Email address" [ref=e201]:
+              - /placeholder: you@organisation.org
+          - generic [ref=e202]:
+            - generic [ref=e203]: Mobile phone
+            - textbox "Mobile phone" [ref=e204]:
+              - /placeholder: +44 7911 000000
+          - generic [ref=e205]:
+            - generic [ref=e206]: What does your team need? (optional)
+            - textbox "What does your team need? (optional)" [ref=e207]:
+              - /placeholder: A sentence about how many people you are, and what they would use the portal for.
+        - generic [ref=e208]:
+          - button "Request access" [ref=e209]
+    - generic [ref=e211]:
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - paragraph [ref=e214]: Property NI
+          - paragraph [ref=e215]: Multi-Tenant Portal
+          - paragraph [ref=e216]: "A role-based workspace for multi-tenant property operations: dashboards, calendar, organisation chart, notifications and people administration."
+        - generic [ref=e217]:
+          - generic [ref=e218]:
+            - paragraph [ref=e219]: Pages
+            - list [ref=e220]:
+              - listitem [ref=e221]:
+                - link "Inside the portal" [ref=e222] [cursor=pointer]:
+                  - /url: "#product"
+              - listitem [ref=e223]:
+                - link "Getting access" [ref=e224] [cursor=pointer]:
+                  - /url: "#access"
+              - listitem [ref=e225]:
+                - link "Contact" [ref=e226] [cursor=pointer]:
+                  - /url: "#contact"
+          - generic [ref=e227]:
+            - paragraph [ref=e228]: Contact
+            - list [ref=e229]:
+              - listitem [ref=e230]:
+                - link "access@propertyni.example" [ref=e231] [cursor=pointer]:
+                  - /url: mailto:access@propertyni.example
+              - listitem [ref=e232]: +44 (0)28 9012 3456
+      - generic [ref=e234]:
+        - paragraph [ref=e235]: © 2026 Property NI. All rights reserved.
+        - paragraph [ref=e236]: Access is granted per organisation and scoped by role.
+  - alert [ref=e237]
