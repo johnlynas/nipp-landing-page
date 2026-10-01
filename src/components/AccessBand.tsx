@@ -32,7 +32,7 @@ export default function AccessBand() {
             Onboarding
           </h2>  
           <p className="mt-4 max-w-[65ch] leading-relaxed text-slate-300">
-            Access is granted per organisation and scoped by role. Tell us who you are and what
+            Access is granted per organization and scoped by role. Tell us who you are and what
             your team needs, and we handle the rest.
           </p>
         </Reveal>

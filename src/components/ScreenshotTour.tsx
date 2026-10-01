@@ -32,7 +32,7 @@ const shots: Shot[] = [
     alt: 'Property NI member workspace',
     width: 1800,
     height: 1059,
-    title: 'Member workspace',
+    title: 'Tenant workspace',
     body: 'A focused, read-only workspace for team members: the shared calendar, the organisation chart and the notifications that matter to their role, nothing more.',
   },
   {
@@ -45,11 +45,11 @@ const shots: Shot[] = [
   },
   {
     src: '/img/org-chart.png',
-    alt: 'Organisation chart with connected roles',
+    alt: 'Organization chart with connected roles',
     width: 1800,
     height: 980,
-    title: 'Organisation chart',
-    body: 'The structure of the organisation inside the portal itself: who holds which role and how teams connect to each other, kept current alongside the people it describes.',
+    title: 'Organization chart',
+    body: 'The structure of the organization inside the portal itself: who holds which role and how teams connect to each other, kept current alongside the people it describes.',
   },
   {
     src: '/img/system-health.png',
@@ -108,7 +108,7 @@ export default function ScreenshotTour() {
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
         <Reveal>
           <h2 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tighter text-slate-900 md:text-4xl">
-            What the portal looks like in use
+           Inside the portal
           </h2>
           <p className="mt-4 max-w-[65ch] leading-relaxed text-slate-600">
             Eight views from a working environment. Each one shows a real screen, not a mock:
@@ -128,9 +128,6 @@ export default function ScreenshotTour() {
               </Reveal>
               <div className={`md:col-span-5 ${i % 2 === 1 ? 'md:order-first' : ''}`}>
                 <Reveal>
-                  <p className="font-mono text-xs tracking-widest text-slate-400">
-                    SCREEN {String(i + 1).padStart(2, '0')} / {shots.length}
-                  </p>
                   <h3 className="mt-2 text-xl font-semibold leading-snug text-slate-900 md:text-2xl">
                     {shot.title}
                   </h3>

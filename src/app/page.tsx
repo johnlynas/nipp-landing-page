@@ -55,26 +55,12 @@ function Hero() {
             <p className="mt-5 max-w-[46ch] text-lg leading-relaxed text-slate-600">
               A role-based workspace for multi-tenant property operations: dashboards, calendar, organisation chart, notifications and people administration.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#contact"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-md bg-accent px-7 py-3 text-base font-semibold text-accent-ink shadow-[0_1px_2px_rgba(15,23,42,0.15)] transition hover:bg-accent-strong/90 active:translate-y-[1px]"
-              >
-                Request access
-              </a>
-              <a
-                href="#product"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-md border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-700 transition hover:border-slate-400 hover:text-slate-900 active:translate-y-[1px]"
-              >
-                See it in use
-              </a>
-            </div>
           </Reveal>
         </div>
 
         <div className="md:col-span-7">
           <Reveal delay={120}>
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.08),0_24px_64px_-24px_rgba(15,23,42,0.28)]">
+            {/* <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.08),0_24px_64px_-24px_rgba(15,23,42,0.28)]">
               <div className="flex h-9 items-center gap-2 border-b border-slate-200 bg-white px-4" aria-hidden>
                 <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
                 <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
@@ -90,7 +76,7 @@ function Hero() {
                   className="absolute inset-0 h-full w-full object-cover object-top"
                 />
               </div>
-            </div>
+            </div> */}
           </Reveal>
         </div>
       </div>

@@ -33,14 +33,13 @@
           - figure [ref=e39]:
             - img "Property NI sign-in page" [ref=e46]
           - generic [ref=e48]:
-            - paragraph [ref=e49]: SCREEN 01 / 8
             - heading "Secure sign-in" [level=3] [ref=e50]
             - paragraph [ref=e51]: One entry point to the portal. Role-based authentication means every person signs in to exactly the part of the workflow they are authorised for, with automatic sign-out after inactivity.
         - generic [ref=e52]:
           - figure [ref=e54]:
             - img "Property NI admin dashboard" [ref=e61]
           - generic [ref=e63]:
-            - paragraph [ref=e64]: SCREEN 02 / 8
+        
             - heading "Admin dashboard" [level=3] [ref=e65]
             - paragraph [ref=e66]: "A live overview of the organisation at a glance: people, roles, activities and operational metrics for the administrators who run things behind the scenes."
         - generic [ref=e67]:
