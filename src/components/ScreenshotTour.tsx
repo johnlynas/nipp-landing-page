@@ -23,7 +23,7 @@ const shots: Shot[] = [
     src: '/img/admin-dashboard.png',
     alt: 'Property NI admin dashboard',
     width: 1800,
-    height: 1087,
+    height: 1130,
     title: 'Admin dashboard',
     body: 'A live overview of the organisation at a glance: people, roles, activities and operational metrics for the administrators who run things behind the scenes.',
   },
@@ -31,7 +31,7 @@ const shots: Shot[] = [
     src: '/img/tenant-dashboard.png',
     alt: 'Property NI member workspace',
     width: 1800,
-    height: 1059,
+    height: 1130,
     title: 'Tenant workspace',
     body: 'A focused, read-only workspace for team members: the shared calendar, the organisation chart and the notifications that matter to their role, nothing more.',
   },
@@ -86,17 +86,15 @@ function Frame({ shot }: { shot: Shot }) {
           <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
           <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
         </div>
-        <div className="relative aspect-[1.7/1] bg-slate-50">
-          <Image
-            src={shot.src}
-            alt={shot.alt}
-            width={shot.width}
-            height={shot.height}
-            className="absolute inset-0 h-full w-full object-cover object-top"
-            sizes="(max-width: 768px) 92vw, 44vw"
-            loading="lazy"
-          />
-        </div>
+        <Image
+          src={shot.src}
+          alt={shot.alt}
+          width={shot.width}
+          height={shot.height}
+          className="block h-auto w-full"
+          sizes="(max-width: 768px) 92vw, 44vw"
+          loading="lazy"
+        />
       </div>
     </figure>
   );
