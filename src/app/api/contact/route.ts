@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 /**
  * Contact / access-request endpoint.
@@ -10,6 +11,10 @@ import { NextResponse } from 'next/server';
  *
  * To persist leads permanently, plug in Vercel KV: if process.env.KV_REST_API_URL
  * and KV_REST_API_TOKEN are set, each lead is also appended to a 'leads' list.
+ *
+ * Each lead is also emailed via SMTP (Gmail) when the SMTP_* env vars are set,
+ * addressed to the SMTP_USER mailbox with the submitter as reply-to. The send
+ * is fully awaited before responding so Vercel can't cut the function short.
  */
 
 export const runtime = 'nodejs';
@@ -81,6 +86,113 @@ async function appendToKv(lead: Lead, receivedAt: string): Promise<void> {
   }
 }
 
+async function sendLeadEmail(lead: Lead): Promise<void> {
+  const host = process.env.SMTP_HOST;
+  const portRaw = process.env.SMTP_PORT;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+  if (!host || !portRaw || !user || !pass) {
+    console.warn('SMTP not configured — lead was logged to stdout only.');
+    return;
+  }
+
+  const from = process.env.SMTP_FROM ? `${process.env.SMTP_FROM} (NIPP contact form)` : user;
+  const subjectPrefix = lead.name ? `New access request from ${lead.name}` : 'New access request';
+
+  const rows: Array<[string, string | undefined]> = [
+    ['Full name', lead.name],
+    ['Organisation', lead.organization],
+    ['Email address', lead.email],
+    ['Mobile phone', lead.phone],
+  ];
+  const detailRows = rows
+    .map(
+      ([label, value]) => `<tr>
+        <td style="padding:10px 24px 10px 32px;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#64748b;white-space:nowrap;">${escHtml(label)}</td>
+        <td style="padding:10px 32px;font-size:15px;font-weight:500;color:#0f172a;">${
+          value ? escHtml(value) : '<span style="color:#cbd5e1;">—</span>'
+        }</td>
+      </tr>`,
+    )
+    .join('');
+
+  const messageBlock = lead.message
+    ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:24px 32px;background:#f8fafc;border-left:3px solid #f5a623;">
+        <tr><td style="padding:16px 20px;font-size:14px;line-height:1.6;color:#334155;white-space:pre-line;">${escHtml(lead.message)}</td></tr>
+      </table>`
+    : '';
+
+  const receivedDate = new Date().toLocaleString('en-GB', { dateStyle: 'long', timeStyle: 'short' });
+
+  const html = `<div style="background:#f1f5f9;padding:24px 0;font-family:'Inter',ui-sans-serif,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="640" style="width:640px;max-width:100%;" cellpadding="0" cellspacing="0">
+            <tr>
+              <td role="presentation" style="background:#ffffff;box-shadow:0 1px 3px rgba(15,23,42,0.08);">
+                <!-- Header band -->
+                <div style="background:#121c30;padding:28px 32px;">
+                  <p style="margin:0;font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#f5a623;">NIPP &mdash; Access request</p>
+                  <h1 style="margin:8px 0 0;font-size:22px;font-weight:700;line-height:1.3;color:#ffffff;">${escHtml(subjectPrefix)}</h1>
+                </div>
+                <!-- Amber divider -->
+                <div style="background:#f5a623;height:4px;font-size:0;line-height:0;">&nbsp;</div>
+
+                <!-- Contact details -->
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  ${detailRows}
+                </table>
+                ${messageBlock}
+
+                <!-- Footer -->
+                <div style="border-top:1px solid #e2e8f0;padding:20px 32px;text-align:center;">
+                  <p style="margin:0;font-size:12px;color:#94a3b8;">Received ${escHtml(receivedDate)} via the access-request form</p>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>`;
+
+  const text = [
+    `New access request${lead.name ? ` from ${lead.name}` : ''}`,
+    '',
+    ...rows.map(([label, value]) => `${label}: ${value ?? '—'}`),
+    lead.message ? ['', lead.message] : [],
+    '',
+    `Received ${new Date().toISOString()}`,
+  ].join('\n');
+
+  const transporter = nodemailer.createTransport({
+    host,
+    port: Number(portRaw) || 587,
+    secure: Number(portRaw) === 465, // STARTTLS for 587, implicit TLS for 465
+    auth: { user, pass },
+  });
+
+  try {
+    const info = await transporter.sendMail({
+      from,
+      to: user,
+      replyTo: lead.email || undefined,
+      subject: `${subjectPrefix} — ${escHtml(receivedDate)}`,
+      text,
+      html,
+    });
+    console.log(JSON.stringify({ type: 'lead_email_sent', messageId: info.messageId }));
+  } finally {
+    // Serverless functions are torn down on response; don't keep pooling sockets.
+    await transporter.close();
+  }
+}
+
+function escHtml(value: string): string {
+  return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 export async function POST(req: Request) {
   try {
     let payload: unknown;
@@ -123,6 +235,17 @@ export async function POST(req: Request) {
     const receivedAt = new Date().toISOString();
     console.log(JSON.stringify({ type: 'access_request', ip, receivedAt, ...lead }));
     await appendToKv(lead, receivedAt);
+
+    try {
+      // Fully awaited before we respond so Vercel can't terminate the function mid-send.
+      await sendLeadEmail(lead);
+    } catch (err) {
+      console.error('Lead email failed (lead was logged to stdout/KV):', err);
+      return NextResponse.json(
+        { ok: false, error: 'Your details were received but the notification could not be sent. Please try again.' },
+        { status: 502 },
+      );
+    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
