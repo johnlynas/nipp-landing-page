@@ -158,7 +158,7 @@ async function sendLeadEmail(lead: Lead): Promise<void> {
   </div>`;
 
   const text = [
-    `New access request${lead.name ? ` from ${lead.name}` : ''}`,
+    `NIPP access request${lead.organization ? ` from ${lead.organization}` : ''}`,
     '',
     ...rows.map(([label, value]) => `${label}: ${value ?? '—'}`),
     lead.message ? ['', lead.message] : [],
