@@ -97,7 +97,7 @@ async function sendLeadEmail(lead: Lead): Promise<void> {
   }
 
   const from = process.env.SMTP_FROM ? `${process.env.SMTP_FROM} (NIPP contact form)` : user;
-  const subjectPrefix = lead.name ? `New access request from ${lead.name}` : 'New access request';
+  const subjectPrefix = lead.organization ? `NIPP access request from ${lead.organization}` : 'NIPP access request';
 
   const rows: Array<[string, string | undefined]> = [
     ['Full name', lead.name],
