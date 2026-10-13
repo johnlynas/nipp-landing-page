@@ -75,6 +75,14 @@ const shots: Shot[] = [
     title: 'People administration',
     body: 'Invite people, assign roles and manage memberships from one screen. When a new user signs in, they land directly in the workspace their role belongs to.',
   },
+  {
+    src: '/img/platform-map.jpg',
+    alt: 'Google Maps view of Northern Ireland with live notification feed',
+    width: 1800,
+    height: 1130,
+    title: 'Google maps integration',
+    body: 'Operations shown geographically. A Google maps view places activity across the region, alongside a live notification feed.',
+  },
 ];
 
 function Frame({ shot }: { shot: Shot }) {
@@ -109,9 +117,9 @@ export default function ScreenshotTour() {
            Inside the portal
           </h2>
           <p className="mt-4 max-w-[65ch] leading-relaxed text-slate-600">
-            Eight views from a working environment. Each one shows a real screen, not a mock:
+            Nine views from a working environment. Each one shows a real screen, not a mock:
             sign-in, both dashboards, the calendar, the organisation chart, system health,
-            notifications and people administration.
+            notifications, people administration and the new platform map.
           </p>
         </Reveal>
 
