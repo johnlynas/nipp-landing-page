@@ -63,7 +63,7 @@ function Hero() {
               </h1>
             </div>
             <p className="mt-4 max-w-[65ch] leading-relaxed text-slate-300">
-              A role-based workspace for multi-tenant property operations: dashboards, calendar, organisation chart, notifications and people administration.
+              Property NI is a property management portal. It is a secure, central digital platform that connects property managers, landlords, and tenants to automate and streamline real estate operations. It serves as a 24/7 self-service hub where users can handle day-to-day tasks without needing direct phone or email interaction.
             </p>
           </Reveal>
         </div>
