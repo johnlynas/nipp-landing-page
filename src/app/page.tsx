@@ -8,7 +8,6 @@ import ContactForm from '@/components/ContactForm';
 const nav = [
   { href: '#product', label: 'Inside the portal' },
   { href: '#access', label: 'Onboarding' },
-  { href: '#contact', label: 'Contact' },
 ];
 
 function Nav() {
