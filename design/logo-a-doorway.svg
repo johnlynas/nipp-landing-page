@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" fill="none">
+  <!-- Concept A: "The Doorway" — one entry point, role-based access -->
+  <g stroke="#16223a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- door frame: open-top rounded rectangle (an arch) -->
+    <path d="M14 58 V26 a18 18 0 0 1 36 0 V58"/>
+    <line x1="6" y1="58" x2="58" y2="58"/>
+  </g>
+  <!-- keyhole: the "one entry" -->
+  <circle cx="32" cy="30" r="6.5" fill="#f5a623"/>
+  <path d="M32 34 L28.5 47 h7 Z" fill="#f5a623"/>
+  <!-- wordmark -->
+  <text x="76" y="41" font-family="Inter, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#16223a">Property NI</text>
+</svg>

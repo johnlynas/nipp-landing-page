@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property NI — Brand &amp; Landing Page Direction</title>
+<style>
+  :root {
+    --navy-950:#121c30; --navy-900:#16223a; --navy-850:#1b2a4a; --navy-800:#24355c; --navy-700:#3a4f7a;
+    --amber:#f5a623; --amber-strong:#c2741a;
+    --ink:#0f172a; --slate-600:#475569; --slate-400:#94a3b8; --slate-200:#e2e8f0; --slate-50:#f8fafc;
+    /* Alt schemes */
+    --pine-900:#12312b; --pine-700:#1d4d43; --mint:#2fbf8f; --mint-strong:#1a8f69;
+    --plum-900:#2a1a2e; --plum-700:#4a2c52; --rose:#e0527e; --rose-strong:#b23a60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',-apple-system,'Segoe UI',sans-serif; color:var(--ink); background:#fff; line-height:1.55; }
+  .wrap { max-width:1080px; margin:0 auto; padding:56px 28px 96px; }
+  h1 { font-size:34px; letter-spacing:-0.8px; font-weight:700; }
+  .lede { color:var(--slate-600); max-width:64ch; margin-top:10px; }
+  section { margin-top:72px; }
+  h2 { font-size:22px; letter-spacing:-0.4px; border-bottom:2px solid var(--slate-200); padding-bottom:10px; margin-bottom:8px; }
+  .sub { color:var(--slate-600); max-width:70ch; margin-bottom:24px; font-size:15px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  @media (max-width:820px){ .grid3{grid-template-columns:1fr;} }
+  .card { border:1px solid var(--slate-200); border-radius:14px; padding:22px; background:#fff; }
+  .card h3 { font-size:16px; margin-bottom:4px; }
+  .card .why { font-size:13.5px; color:var(--slate-600); margin-top:8px; }
+  .logo-stage { border-radius:10px; padding:26px 18px; display:flex; align-items:center; justify-content:center; min-height:120px; margin-bottom:10px; }
+  .stage-light { background:#fff; border:1px solid var(--slate-200); }
+  .stage-dark { background:var(--navy-900); }
+  .logo-stage svg { height:56px; width:auto; }
+  .tag { display:inline-block; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:3px 10px; border-radius:999px; background:var(--slate-50); color:var(--slate-600); border:1px solid var(--slate-200); margin-bottom:12px;}
+  .tag.rec { background:#fde8c2; color:#7a4d0e; border-color:#f3cf8a; }
+  /* swatches */
+  .scheme { display:flex; gap:6px; margin-top:14px; }
+  .sw { flex:1; border-radius:8px; padding:26px 8px 8px; font-size:10.5px; font-weight:600; letter-spacing:0.03em; min-width:0; }
+  .sw span { display:block; margin-top:14px; word-break:break-all; }
+  /* type */
+  .type-row { display:flex; gap:28px; align-items:baseline; flex-wrap:wrap; padding:18px 0; border-bottom:1px solid var(--slate-50); }
+  .type-row .sample { font-size:30px; letter-spacing:-0.5px; }
+  .type-row .meta { font-size:13px; color:var(--slate-600); }
+  /* wireframe */
+  .wire { border:1.5px dashed var(--slate-400); border-radius:12px; padding:18px; background:var(--slate-50); margin-top:16px; }
+  .wblock { border:1px solid var(--slate-300,#cbd5e1); border-radius:8px; background:#fff; padding:12px 14px; margin-bottom:10px; font-size:13px; color:var(--slate-600); }
+  .wblock b { color:var(--ink); display:block; font-size:13.5px; margin-bottom:2px;}
+  .wrow { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  @media (max-width:820px){ .wrow{grid-template-columns:repeat(2,1fr);} }
+  .wblock.dark { background:var(--navy-900); border-color:var(--navy-700); color:#cbd5e1; }
+  .wblock.dark b { color:#fff; }
+  .wblock.amber { background:var(--amber); border-color:var(--amber-strong); color:#3d2a08; }
+  .note { font-size:12.5px; color:var(--slate-400); margin-top:6px; }
+  ul.tight { padding-left:18px; font-size:14px; color:var(--slate-600); }
+  ul.tight li { margin-bottom:6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Property NI — brand &amp; landing page direction</h1>
+<p class="lede">Three logo concepts, three colour directions, a typography pairing, and a structural wireframe for making the page feel bespoke rather than template. Everything here is grounded in what the portal actually does: one entry point, role-based workspaces, multi-tenant operations across Northern Ireland.</p>
+
+<!-- ============ LOGOS ============ -->
+<section id="logos">
+  <h2>Logo concepts</h2>
+  <p class="sub">All three keep the existing navy + amber palette so nothing else on the site has to change. Each is drawn as line work with a single amber accent — they scale from favicon to hero and read at small sizes.</p>
+  <div class="grid3">
+
+    <div class="card">
+      <span class="tag rec">Recommended</span>
+      <h3>A — The Doorway</h3>
+      <div class="logo-stage stage-light">
+        <svg viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#16223a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 58 V26 a18 18 0 0 1 36 0 V58"/>
+            <line x1="6" y1="58" x2="58" y2="58"/>
+          </g>
+          <circle cx="32" cy="30" r="6.5" fill="#f5a623"/>
+          <path d="M32 34 L28.5 47 h7 Z" fill="#f5a623"/>
+          <text x="76" y="41" font-family="Inter, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#16223a">Property NI</text>
+        </svg>
+      </div>
+      <div class="logo-stage stage-dark">
+        <svg viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#f1f5f9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 58 V26 a18 18 0 0 1 36 0 V58"/>
+            <line x1="6" y1="58" x2="58" y2="58"/>
+          </g>
+          <circle cx="32" cy="30" r="6.5" fill="#f5a623"/>
+          <path d="M32 34 L28.5 47 h7 Z" fill="#f5a623"/>
+          <text x="76" y="41" font-family="Inter, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#ffffff">Property NI</text>
+        </svg>
+      </div>
+      <p class="why">An arched doorway with a keyhole: “one portal, one entry point.” The arch reads as property/doorway without being literal; the amber keyhole is the single accent. Strongest narrative fit for the whole product story.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Option</span>
+      <h3>B — Roofline P</h3>
+      <div class="logo-stage stage-light">
+        <svg viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#16223a" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="10" x2="18" y2="54"/>
+            <path d="M18 10 L38 26 H50 a12 12 0 0 1 0 24 H30"/>
+          </g>
+          <circle cx="18" cy="10" r="5.5" fill="#f5a623"/>
+          <text x="72" y="41" font-family="Inter, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#16223a">Property NI</text>
+        </svg>
+      </div>
+      <div class="logo-stage stage-dark">
+        <svg viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#f1f5f9" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="10" x2="18" y2="54"/>
+            <path d="M18 10 L38 26 H50 a12 12 0 0 1 0 24 H30"/>
+          </g>
+          <circle cx="18" cy="10" r="5.5" fill="#f5a623"/>
+          <text x="72" y="41" font-family="Inter, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#ffffff">Property NI</text>
+        </svg>
+      </div>
+      <p class="why">The letter P built from a house gable — property made literal, with the amber dot as the entry point at the apex. Compact and confident; works well as a standalone app icon.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Option</span>
+      <h3>C — NI Monogram</h3>
+      <div class="logo-stage stage-light">
+        <svg viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#16223a" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="14" y1="54" x2="14" y2="10"/>
+            <line x1="50" y1="54" x2="50" y2="10"/>
+          </g>
+          <line x1="14" y1="10" x2="50" y2="54" stroke="#f5a623" stroke-width="5.5" stroke-linecap="round"/>
+          <text x="70" y="41" font-family="Inter, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#16223a">Property NI</text>
+        </svg>
+      </div>
+      <div class="logo-stage stage-dark">
+        <svg viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#f1f5f9" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="14" y1="54" x2="14" y2="10"/>
+            <line x1="50" y1="54" x2="50" y2="10"/>
+          </g>
+          <line x1="14" y1="10" x2="50" y2="54" stroke="#f5a623" stroke-width="5.5" stroke-linecap="round"/>
+          <text x="70" y="41" font-family="Inter, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#ffffff">Property NI</text>
+        </svg>
+      </div>
+      <p class="why">Two verticals (the N and I of the region, two parties — landlord &amp; tenant) joined by one amber diagonal: the platform that connects them. The most abstract; best if you want a mark over a wordmark.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ COLOUR ============ -->
+<section id="colour">
+  <h2>Colour schemes</h2>
+  <p class="sub">Option 1 is the current palette, kept and refined. Options 2 and 3 swap the accent for differentiation while keeping the dark-chrome structure that already works.</p>
+  <div class="grid3">
+
+    <div class="card">
+      <span class="tag rec">Current — keep</span>
+      <h3>Navy &amp; Amber</h3>
+      <div class="scheme">
+        <div class="sw" style="background:#121c30;color:#cbd5e1"><span>950 #121C30</span></div>
+        <div class="sw" style="background:#16223a;color:#cbd5e1"><span>900 #16223A</span></div>
+        <div class="sw" style="background:#3a4f7a;color:#fff"><span>700 #3A4F7A</span></div>
+        <div class="sw" style="background:#f5a623;color:#3d2a08"><span>Amber #F5A623</span></div>
+        <div class="sw" style="background:#c2741a;color:#fff"><span>Deep #C2741A</span></div>
+      </div>
+      <p class="why">Trust (navy) + warmth/energy (amber). Amber is already the single accent for CTA and focus — a disciplined one-accent system. Keep it; refine, don’t replace.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Alt</span>
+      <h3>Pine &amp; Mint</h3>
+      <div class="scheme">
+        <div class="sw" style="background:#0d211d;color:#a7d8c8"><span>#0D211D</span></div>
+        <div class="sw" style="background:#12312b;color:#a7d8c8"><span>#12312B</span></div>
+        <div class="sw" style="background:#1d4d43;color:#eafff7"><span>#1D4D43</span></div>
+        <div class="sw" style="background:#2fbf8f;color:#063527"><span>Mint #2FBF8F</span></div>
+        <div class="sw" style="background:#1a8f69;color:#fff"><span>#1A8F69</span></div>
+      </div>
+      <p class="why">Deep pine with a mint accent reads “secure, modern SaaS” and differentiates from the amber that many property tools use. Mint carries white text at large sizes; keep ink on small UI.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Alt</span>
+      <h3>Plum &amp; Rose</h3>
+      <div class="scheme">
+        <div class="sw" style="background:#1f1224;color:#d9b8cf"><span>#1F1224</span></div>
+        <div class="sw" style="background:#2a1a2e;color:#d9b8cf"><span>#2A1A2E</span></div>
+        <div class="sw" style="background:#4a2c52;color:#f3e3f0"><span>#4A2C52</span></div>
+        <div class="sw" style="background:#e0527e;color:#fff"><span>Rose #E0527E</span></div>
+        <div class="sw" style="background:#b23a60;color:#fff"><span>#B23A60</span></div>
+      </div>
+      <p class="why">A warmer, more human direction — plum chrome with a rose accent. Good if the audience is individual landlords/tenants rather than corporate admins; slightly less “enterprise” than navy.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ TYPE ============ -->
+<section id="type">
+  <h2>Typography</h2>
+  <p class="sub">The page currently renders in the system font stack (Inter is declared but not visibly loading). Pair a characterful display face for headings with a neutral body face — this alone does most of the “custom, not template” work.</p>
+
+  <div class="type-row">
+    <div class="sample" style="font-family:'Sora','Inter',sans-serif; font-weight:700;">Sora — display</div>
+    <div class="meta">Headings &amp; hero. Geometric, modern, slightly technical. Distinct from the ubiquitous Inter/Roboto default.</div>
+  </div>
+  <div class="type-row">
+    <div class="sample" style="font-family:'Space Grotesk','Inter',sans-serif; font-weight:600;">Space Grotesk — display alt</div>
+    <div class="meta">A touch more personality and a monospace-influenced feel; pairs well with the “portal/system” subject matter.</div>
+  </div>
+  <div class="type-row">
+    <div class="sample" style="font-family:'Inter',sans-serif; font-weight:400;">Inter — body</div>
+    <div class="meta">Body copy, UI labels, forms. Keep Inter for the working text; only swap the display layer.</div>
+  </div>
+  <p class="note">Load via next/font (already in use) so there is no layout shift. Display face at 600–700 with tight letter-spacing (-0.02em); body at 400/500.</p>
+</section>
+
+<!-- ============ REFACTOR WIREFRAME ============ -->
+<section id="refactor">
+  <h2>Making the page feel custom (structural refactor)</h2>
+  <p class="sub">The current page is a clean vertical stack — hero, screenshot list, onboarding steps, contact. That’s the template shape. The changes below break that rhythm so it reads as designed for this product, while keeping every section that communicates the portal’s purpose.</p>
+
+  <div class="wire">
+    <div class="wblock dark"><b>1 · Hero — split, not stacked</b>Left: headline + one-sentence value prop + primary CTA. Right: a live-feeling product frame (the login screen) tilted slightly with the amber accent bar, so the first thing seen is the actual portal, not a wall of text.</div>
+    <div class="wblock"><b>2 · “Who it’s for” role strip</b>A horizontal band naming the three audiences — Property managers · Landlords · Tenants — each with a one-line outcome. This instantly communicates purpose and lets visitors self-identify. (New; currently implied only.)</div>
+    <div class="wblock"><b>3 · Inside the portal — asymmetric grid, not alternating rows</b>Replace the 9 long alternating image/text rows with a bento: one large featured screen (admin dashboard) + smaller tiles for calendar, org chart, notifications, map. Fewer scroll cycles, more visual variety, still shows every real screen.</div>
+    <div class="wrow">
+      <div class="wblock"><b>Featured</b>Admin dashboard (large)</div>
+      <div class="wblock"><b>Tile</b>Calendar</div>
+      <div class="wblock"><b>Tile</b>Org chart</div>
+      <div class="wblock"><b>Tile</b>Platform map</div>
+    </div>
+    <div class="wblock dark"><b>4 · Onboarding — numbered timeline, connected</b>Keep the 4 steps but render as a connected horizontal timeline with the amber line running through the numbers, so it reads as a journey rather than four separate cards.</div>
+    <div class="wblock amber"><b>5 · Contact — full-bleed CTA band</b>Pull the contact form out of the grey section into a bold navy full-width band with the form in a white card on top. High contrast, feels like a designed closing moment, not a form dump.</div>
+  </div>
+
+  <h3 style="margin-top:28px; font-size:16px;">Smaller moves that add up</h3>
+  <ul class="tight">
+    <li>Add the new logo to the nav and hero (replacing the current placeholder PNG), with an SVG favicon.</li>
+    <li>Give each bento tile a subtle hover lift + the amber accent on focus, so screenshots feel interactive.</li>
+    <li>Use the display font only for h1/h2/section titles; keep body in Inter — instant “designed” signal with minimal change.</li>
+    <li>Add a thin amber top-border to the hero and footer to bookend the page in brand colour.</li>
+    <li>Replace the three-dot browser chrome on screenshot frames with the real portal’s top bar (navy + logo) for authenticity.</li>
+  </ul>
+</section>
+
+<p class="note" style="margin-top:48px;">Logo SVG sources: design/logo-a-doorway.svg · logo-b-roofline.svg · logo-c-ni-monogram.svg — drop the chosen one into public/img/ and reference it in Nav + Hero.</p>
+
+</div>
+</body>
+</html>
