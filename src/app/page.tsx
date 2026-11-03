@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Reveal from '@/components/Reveal';
+import Logo from '@/components/Logo';
 import ScreenshotTour from '@/components/ScreenshotTour';
 import AccessBand from '@/components/AccessBand';
 import ContactForm from '@/components/ContactForm';
@@ -14,11 +15,8 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="flex items-baseline gap-2">
-          <span className="text-lg font-bold tracking-tight text-slate-900">Property NI</span>
-          <span className="hidden text-xs font-medium uppercase tracking-widest text-slate-400 sm:inline">
-            Portal
-          </span>
+        <a href="#top" aria-label="Property NI — home" className="block">
+          <Logo tone="light" className="h-8 w-auto sm:h-9" />
         </a>
         <nav aria-label="Main" className="flex items-center gap-5 sm:gap-8">
           {nav.map((item) => (
@@ -44,26 +42,59 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="bg-navy-900 text-slate-100">
+    <section id="top" className="border-t-4 border-accent bg-navy-900 text-slate-100">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 pt-14 sm:px-8 md:grid-cols-12 md:gap-10 md:pb-24 md:pt-20 lg:gap-14">
-        <div className="md:col-span-5">
+        <div className="md:col-span-6">
           <Reveal>
-            <div className="flex items-center gap-4">
-              <Image
-                src="/img/logo.png"
-                alt="Property NI logo"
-                width={68}
-                height={74}
-                priority
-                className="h-10 w-auto shrink-0 sm:h-12"
-              />
-              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                One portal for every role
-              </h1>
-            </div>
-            <p className="mt-4 max-w-[65ch] leading-relaxed text-slate-300">
-              Property NI is a property management portal. It is a secure, central digital platform that connects property managers, landlords, and tenants to automate and streamline real estate operations. It serves as a 24/7 self-service hub where users can handle day-to-day tasks without needing direct phone or email interaction.
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              Multi-tenant property portal
             </p>
+            <h1 className="mt-4 font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl">
+              One portal for every role
+            </h1>
+            <p className="mt-5 max-w-[60ch] leading-relaxed text-slate-300">
+              Property NI is a secure, central platform that connects property managers, landlords
+              and tenants. It automates day-to-day real estate operations as a 24/7 self-service
+              hub — no phone calls, no email threads, just sign in and get on with it.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="#contact"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-md bg-accent px-7 py-3 text-base font-semibold text-accent-ink shadow-[0_1px_2px_rgba(15,23,42,0.2)] transition hover:bg-accent-strong/90 active:translate-y-[1px]"
+              >
+                Request access
+              </a>
+              <a
+                href="#product"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-md border border-navy-700 px-6 py-3 text-base font-semibold text-slate-200 transition hover:border-slate-500 hover:text-white"
+              >
+                See inside the portal
+              </a>
+            </div>
+          </Reveal>
+        </div>
+
+        <div className="md:col-span-6">
+          <Reveal delay={120}>
+            {/* Real login screen with an amber accent bar */}
+            <div className="relative mx-auto max-w-xl rounded-xl border border-navy-800 bg-white shadow-[0_24px_64px_-24px_rgba(0,0,0,0.55)]">
+              <div className="h-1.5 w-full rounded-t-xl bg-accent" aria-hidden />
+              <div className="flex h-10 items-center gap-2 border-b border-slate-200 px-4" aria-hidden>
+                <Logo tone="light" className="h-4 w-auto opacity-90" />
+                <span className="ml-auto text-[11px] font-medium tracking-wide text-slate-400">
+                  propertyni.example
+                </span>
+              </div>
+              <Image
+                src="/img/login.png"
+                alt="Property NI sign-in page"
+                width={1800}
+                height={972}
+                priority
+                className="block h-auto w-full"
+                sizes="(max-width: 768px) 92vw, 44vw"
+              />
+            </div>
           </Reveal>
         </div>
       </div>
@@ -71,18 +102,52 @@ function Hero() {
   );
 }
 
+const audiences = [
+  {
+    title: 'Property managers',
+    body: 'Run the whole operation from one dashboard — people, roles, activities and metrics in a single view.',
+  },
+  {
+    title: 'Landlords',
+    body: 'See what is happening across your portfolio without chasing anyone; every update lands where it should.',
+  },
+  {
+    title: 'Tenants & team members',
+    body: 'A focused self-service workspace: the shared calendar, the organisation chart and the notifications that matter to you.',
+  },
+];
+
+function RoleStrip() {
+  return (
+    <section aria-label="Who Property NI is for" className="border-b border-slate-200 bg-white">
+      <div className="mx-auto grid max-w-7xl gap-x-10 gap-y-8 px-5 py-14 sm:px-8 md:grid-cols-3 md:py-16">
+        {audiences.map((a, i) => (
+          <Reveal key={a.title} delay={i * 80}>
+            <div className="border-l-2 border-accent pl-5">
+              <h2 className="font-display text-lg font-semibold tracking-tight text-slate-900">
+                {a.title}
+              </h2>
+              <p className="mt-2 max-w-[46ch] text-sm leading-relaxed text-slate-600">{a.body}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function ContactSection() {
   return (
-    <section id="contact" className="bg-slate-50">
+    <section id="contact" className="border-t-4 border-accent bg-navy-950">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 md:grid-cols-12 md:gap-14 md:py-28">
         <div className="md:col-span-5">
           <Reveal>
-            <h2 className="text-3xl font-semibold leading-tight tracking-tighter text-slate-900 md:text-4xl">
+            <h2 className="font-display text-3xl font-bold leading-tight tracking-tighter text-white md:text-4xl">
               Tell us who you are and how your team would use it
             </h2>
-            <p className="mt-4 max-w-[50ch] leading-relaxed text-slate-600">
+            <p className="mt-4 max-w-[50ch] leading-relaxed text-slate-400">
               Leave an email address or a mobile phone number (or both) and we will come back to
-              you about access
+              you about access.
             </p>
           </Reveal>
         </div>
@@ -101,8 +166,7 @@ function Footer() {
     <footer className="bg-navy-950 text-slate-400">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-start md:justify-between md:py-16">
         <div>
-          <p className="text-lg font-bold tracking-tight text-white">Property NI</p>
-          <p className="mt-1 text-sm text-slate-500">Multi-Tenant Portal</p>
+          <Logo tone="dark" className="h-9 w-auto" />
           <p className="mt-4 max-w-[38ch] text-sm leading-relaxed">
             A role-based workspace for multi-tenant property operations: dashboards, calendar,
             organisation chart, notifications and people administration.
@@ -149,6 +213,7 @@ export default function LandingPage() {
     <main className="min-h-[100dvh] bg-white">
       <Nav />
       <Hero />
+      <RoleStrip />
       <ScreenshotTour />
       <AccessBand />
       <ContactSection />

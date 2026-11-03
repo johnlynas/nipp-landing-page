@@ -8,17 +8,10 @@ type Shot = {
   height: number;
   title: string;
   body: string;
+  featured?: boolean;
 };
 
 const shots: Shot[] = [
-  {
-    src: '/img/login.png',
-    alt: 'Property NI sign-in page',
-    width: 1800,
-    height: 972,
-    title: 'Secure sign-in',
-    body: 'One entry point to the portal. Role-based authentication means every person signs in to exactly the part of the workflow they are authorised for, with automatic sign-out after inactivity.',
-  },
   {
     src: '/img/admin-dashboard.png',
     alt: 'Property NI admin dashboard',
@@ -26,6 +19,15 @@ const shots: Shot[] = [
     height: 1130,
     title: 'Admin dashboard',
     body: 'A live overview of the organisation at a glance: people, roles, activities and operational metrics for the administrators who run things behind the scenes.',
+    featured: true,
+  },
+  {
+    src: '/img/login.png',
+    alt: 'Property NI sign-in page',
+    width: 1800,
+    height: 972,
+    title: 'Secure sign-in',
+    body: 'One entry point. Role-based authentication lands every person in exactly the part of the workflow they are authorised for.',
   },
   {
     src: '/img/tenant-dashboard.png',
@@ -33,7 +35,7 @@ const shots: Shot[] = [
     width: 1800,
     height: 1130,
     title: 'Tenant workspace',
-    body: 'A focused, read-only workspace for team members: the shared calendar, the organisation chart and the notifications that matter to their role, nothing more.',
+    body: 'A focused, read-only workspace for team members: the calendar, the organisation chart and the notifications that matter to their role.',
   },
   {
     src: '/img/calendar.png',
@@ -41,7 +43,7 @@ const shots: Shot[] = [
     width: 1800,
     height: 975,
     title: 'Shared calendar',
-    body: 'Every team on one schedule. Administrators create and edit events; members browse month, week or day views and open any event for full details.',
+    body: 'Every team on one schedule. Administrators create and edit events; members browse month, week or day views.',
   },
   {
     src: '/img/org-chart.png',
@@ -49,7 +51,7 @@ const shots: Shot[] = [
     width: 1800,
     height: 980,
     title: 'Organization chart',
-    body: 'The structure of the organization inside the portal itself: who holds which role and how teams connect to each other, kept current alongside the people it describes.',
+    body: 'Who holds which role and how teams connect, kept current alongside the people it describes.',
   },
   {
     src: '/img/system-health.png',
@@ -57,7 +59,7 @@ const shots: Shot[] = [
     width: 1800,
     height: 977,
     title: 'System health',
-    body: 'A live view of backend services and dependency status, so operations can spot a degraded component before users ever notice it.',
+    body: 'A live view of backend services and dependency status, so operations spots a degraded component early.',
   },
   {
     src: '/img/notifications.png',
@@ -65,7 +67,7 @@ const shots: Shot[] = [
     width: 1800,
     height: 956,
     title: 'Notifications',
-    body: 'Role-aware in-app notifications keep people up to date with changes and updates that concern their position in the organisation, without anyone having to ask.',
+    body: 'Role-aware in-app notifications keep people up to date with changes that concern their position.',
   },
   {
     src: '/img/users.png',
@@ -73,37 +75,55 @@ const shots: Shot[] = [
     width: 1800,
     height: 976,
     title: 'People administration',
-    body: 'Invite people, assign roles and manage memberships from one screen. When a new user signs in, they land directly in the workspace their role belongs to.',
+    body: 'Invite people, assign roles and manage memberships from one screen.',
   },
   {
     src: '/img/platform-map.jpg',
     alt: 'Google Maps view of Northern Ireland with live notification feed',
     width: 1800,
     height: 1130,
-    title: 'Google maps integration',
-    body: 'Operations shown geographically. A Google maps view places activity across the region, alongside a live notification feed.',
+    title: 'Platform map',
+    body: 'Operations shown geographically: activity across the region alongside a live notification feed.',
   },
 ];
 
+/** Portal top bar — replaces generic browser chrome so frames read as the real product. */
+function PortalBar({ label }: { label?: string }) {
+  return (
+    <div className="flex h-9 items-center gap-2 bg-navy-900 px-3" aria-hidden>
+      <span className="h-2 w-2 rounded-full bg-accent" />
+      <span className="text-[11px] font-semibold tracking-wide text-white/85">Property NI</span>
+      {label && <span className="ml-auto truncate text-[10px] text-slate-400">{label}</span>}
+    </div>
+  );
+}
+
 function Frame({ shot }: { shot: Shot }) {
   return (
-    <figure className="w-full">
-      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06),0_12px_32px_-12px_rgba(15,23,42,0.18)]">
-        <div className="flex h-9 items-center gap-2 border-b border-slate-200 bg-white px-4" aria-hidden>
-          <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
-          <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
-          <span className="h-2.5 w-2.5 rounded-full bg-slate-200" />
+    <figure className="group h-full">
+      <div
+        tabIndex={0}
+        className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06),0_12px_32px_-12px_rgba(15,23,42,0.18)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_2px_4px_rgba(15,23,42,0.08),0_20px_48px_-16px_rgba(15,23,42,0.28)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      >
+        <div className="border-b border-navy-800">
+          <PortalBar label={shot.title} />
         </div>
         <Image
           src={shot.src}
           alt={shot.alt}
           width={shot.width}
           height={shot.height}
-          className="block h-auto w-full"
-          sizes="(max-width: 768px) 92vw, 44vw"
+          className={`block w-full ${shot.featured ? 'h-auto' : 'aspect-[16/10] h-auto object-cover'}`}
+          sizes="(max-width: 768px) 92vw, (max-width: 1024px) 44vw, 30vw"
           loading="lazy"
         />
       </div>
+      <figcaption className="mt-4">
+        <h3 className="font-display text-base font-semibold tracking-tight text-slate-900">
+          {shot.title}
+        </h3>
+        <p className="mt-1.5 max-w-[52ch] text-sm leading-relaxed text-slate-600">{shot.body}</p>
+      </figcaption>
     </figure>
   );
 }
@@ -113,34 +133,25 @@ export default function ScreenshotTour() {
     <section id="product" className="bg-white">
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
         <Reveal>
-          <h2 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tighter text-slate-900 md:text-4xl">
-           Inside the portal
+          <h2 className="max-w-2xl font-display text-3xl font-semibold leading-tight tracking-tighter text-slate-900 md:text-4xl">
+            Inside the portal
           </h2>
           <p className="mt-4 max-w-[65ch] leading-relaxed text-slate-600">
-            Nine views from a working environment. Each one shows a real screen, not a mock:
-            sign-in, both dashboards, the calendar, the organisation chart, system health,
-            notifications, people administration and the new platform map.
+            Nine views from a working environment. Each one is a real screen, not a mock: both
+            dashboards, sign-in, the calendar, the organisation chart, system health, notifications,
+            people administration and the platform map.
           </p>
         </Reveal>
 
-        <div className="mt-14 space-y-20 md:space-y-28">
+        <div className="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
           {shots.map((shot, i) => (
-            <div key={shot.src} className="grid items-center gap-8 md:grid-cols-12 md:gap-12">
-              <Reveal
-                className={`md:col-span-7 ${i % 2 === 1 ? 'md:order-last' : ''}`}
-                delay={60}
-              >
-                <Frame shot={shot} />
-              </Reveal>
-              <div className={`md:col-span-5 ${i % 2 === 1 ? 'md:order-first' : ''}`}>
-                <Reveal>
-                  <h3 className="mt-2 text-xl font-semibold leading-snug text-slate-900 md:text-2xl">
-                    {shot.title}
-                  </h3>
-                  <p className="mt-3 leading-relaxed text-slate-600">{shot.body}</p>
-                </Reveal>
-              </div>
-            </div>
+            <Reveal
+              key={shot.src}
+              delay={(i % 3) * 60}
+              className={shot.featured ? 'md:col-span-2 lg:row-span-2' : ''}
+            >
+              <Frame shot={shot} />
+            </Reveal>
           ))}
         </div>
       </div>
