@@ -143,12 +143,12 @@ export default function ScreenshotTour() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-x-8 gap-y-12 lg:grid-cols-3">
+        <div className="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
           {shots.map((shot, i) => (
             <Reveal
               key={shot.src}
               delay={(i % 3) * 60}
-              className={shot.featured ? 'lg:col-span-2 lg:row-span-2' : ''}
+              className={shot.featured ? 'md:col-span-2 lg:row-span-2' : ''}
             >
               <Frame shot={shot} />
             </Reveal>
