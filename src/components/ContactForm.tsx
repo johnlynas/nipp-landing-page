@@ -80,7 +80,7 @@ export default function ContactForm() {
 
         <div>
           <span className="mb-2 block text-sm font-medium text-slate-700">Organisation</span>
-          <input name="organization" type="text" autoComplete="organization" placeholder="Your organisation" className={inputClasses} />
+          <input name="organization" type="text" autoComplete="organization" placeholder="Your organization" className={inputClasses} />
         </div>
 
         <div>
