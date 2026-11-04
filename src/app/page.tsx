@@ -94,7 +94,7 @@ const audiences = [
   },
   {
     title: 'Landlords & Management Agents',
-    body: 'See what is happening across your entire property portfolio, along with workflows to automate tasks',
+    body: 'See what is happening across your entire property portfolio, along with workflows to automate tasks.',
   },
   {
     title: 'Tenants',
