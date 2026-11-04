@@ -75,7 +75,7 @@ export default function ContactForm() {
           <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700">
             Full name
           </label>
-          <input id="name" name="name" type="text" autoComplete="name" placeholder="Alex McAllister" className={inputClasses} />
+          <input id="name" name="name" type="text" autoComplete="name" placeholder="Your name" className={inputClasses} />
         </div>
 
         <div>
@@ -107,7 +107,7 @@ export default function ContactForm() {
           <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-700">
             What does your team need? (optional)
           </label>
-          <textarea id="message" name="message" rows={4} placeholder="A sentence about how many people you are, and what they would use the portal for." className={`${inputClasses} resize-y`} />
+          <textarea id="message" name="message" rows={4} placeholder="Tell us how many people and units you want to manage. Also, what do you want to use the portal for ?" className={`${inputClasses} resize-y`} />
         </div>
       </div>
 
