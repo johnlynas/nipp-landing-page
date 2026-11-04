@@ -53,8 +53,8 @@ function Hero() {
               One portal for every role
             </h1>
             <p className="mt-5 max-w-[60ch] leading-relaxed text-slate-300">
-              Property NI is a secure, central platform that connects property managers, landlords
-              and tenants. It automates day-to-day real estate operations as a 24/7 self-service
+              Property NI is a secure, central platform that connects property managers, landlords,
+              management agents and tenants. It automates day-to-day real estate operations as a 24/7 self-service
               hub — no phone calls, no email threads, just sign in and get on with it.
             </p>
           </Reveal>
