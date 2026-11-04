@@ -4,7 +4,7 @@ const steps = [
   {
     n: '1',
     title: 'Get your invitation',
-    body: 'Send us your details below. We set up your organisation and invite you to the portal.',
+    body: 'Send us your details below. We set up your organization and invite you to the portal.',
   },
   {
     n: '2',

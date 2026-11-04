@@ -18,7 +18,7 @@ const shots: Shot[] = [
     width: 1800,
     height: 1130,
     title: 'Admin dashboard',
-    body: 'A live overview of the organisation at a glance: people, roles, activities and operational metrics for the administrators who run things behind the scenes.',
+    body: 'A live overview of the organization at a glance: people, roles, activities and operational metrics for the administrators who run things behind the scenes.',
     featured: true,
   },
   {
@@ -35,7 +35,7 @@ const shots: Shot[] = [
     width: 1800,
     height: 1130,
     title: 'Tenant workspace',
-    body: 'A focused, read-only workspace for team members: the calendar, the organisation chart and the notifications that matter to their role.',
+    body: 'A focused, read-only workspace for team members: the calendar and the notifications that matter to their role.',
   },
   {
     src: '/img/calendar.png',
@@ -137,7 +137,7 @@ export default function ScreenshotTour() {
             Inside the portal
           </h2>
           <p className="mt-4 max-w-[65ch] leading-relaxed text-slate-600">
-            Pages from a working environment. Dashboards, sign-in, the calendar, the organisation chart, system health, notifications,
+            Pages from a working environment. Dashboards, sign-in, the calendar, the organization chart, system health, notifications,
             people administration and the platform map.
           </p>
         </Reveal>

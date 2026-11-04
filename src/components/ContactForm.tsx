@@ -87,7 +87,7 @@ export default function ContactForm() {
           <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700">
             Email address
           </label>
-          <input id="email" name="email" type="email" autoComplete="email" placeholder="you@organisation.org" className={inputClasses} />
+          <input id="email" name="email" type="email" autoComplete="email" placeholder="you@organization.org" className={inputClasses} />
           {fieldErrors.email && (
             <p className="mt-2 text-sm font-medium text-danger-ink">{fieldErrors.email}</p>
           )}

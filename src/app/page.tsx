@@ -154,7 +154,7 @@ function Footer() {
           <Logo tone="dark" className="h-9 w-auto" />
           <p className="mt-4 max-w-[38ch] text-sm leading-relaxed">
             A role-based workspace for multi-tenant property operations: dashboards, calendar,
-            organisation chart, notifications and people administration.
+            organization chart, notifications and people administration.
           </p>
         </div>
         <div className="flex flex-wrap gap-x-12 gap-y-6">
