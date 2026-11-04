@@ -57,28 +57,13 @@ function Hero() {
               and tenants. It automates day-to-day real estate operations as a 24/7 self-service
               hub — no phone calls, no email threads, just sign in and get on with it.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#contact"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-md bg-accent px-7 py-3 text-base font-semibold text-accent-ink shadow-[0_1px_2px_rgba(15,23,42,0.2)] transition hover:bg-accent-strong/90 active:translate-y-[1px]"
-              >
-                Request access
-              </a>
-              <a
-                href="#product"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-md border border-navy-700 px-6 py-3 text-base font-semibold text-slate-200 transition hover:border-slate-500 hover:text-white"
-              >
-                See inside the portal
-              </a>
-            </div>
           </Reveal>
         </div>
 
         <div className="md:col-span-6">
           <Reveal delay={120}>
-            {/* Real login screen with an amber accent bar */}
-            <div className="relative mx-auto max-w-xl rounded-xl border border-navy-800 bg-white shadow-[0_24px_64px_-24px_rgba(0,0,0,0.55)]">
-              <div className="h-1.5 w-full rounded-t-xl bg-accent" aria-hidden />
+            {/* Real login screen with an amber accent border */}
+            <div className="relative mx-auto max-w-xl overflow-hidden rounded-xl border-2 border-accent bg-white shadow-[0_24px_64px_-24px_rgba(0,0,0,0.55)]">
               <div className="flex h-10 items-center gap-2 border-b border-slate-200 px-4" aria-hidden>
                 <Logo tone="light" className="h-4 w-auto opacity-90" />
                 <span className="ml-auto text-[11px] font-medium tracking-wide text-slate-400">
