@@ -101,7 +101,7 @@ async function sendLeadEmail(lead: Lead): Promise<void> {
 
   const rows: Array<[string, string | undefined]> = [
     ['Full name', lead.name],
-    ['Organisation', lead.organization],
+    ['Organization', lead.organization],
     ['Email address', lead.email],
     ['Mobile phone', lead.phone],
   ];
