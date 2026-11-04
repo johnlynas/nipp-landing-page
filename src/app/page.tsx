@@ -93,12 +93,12 @@ const audiences = [
     body: 'Run the whole operation from one dashboard — people, roles, activities and metrics in a single view.',
   },
   {
-    title: 'Landlords',
-    body: 'See what is happening across your portfolio without chasing anyone; every update lands where it should.',
+    title: 'Landlords & Management Agents',
+    body: 'See what is happening across your entire property portfolio, along with workflows to automate tasks',
   },
   {
-    title: 'Tenants & team members',
-    body: 'A focused self-service workspace: the shared calendar, the organisation chart and the notifications that matter to you.',
+    title: 'Tenants',
+    body: 'A focused self-service dashboard. Organization specific information, a shared calendar and timely notifications that matter to you.',
   },
 ];
 
