@@ -50,7 +50,7 @@ export default function ContactForm() {
     return (
       <div
         role="status"
-        className="rounded-xl border border-slate-200 bg-white p-8 text-left shadow-[0_1px_2px_rgba(15,23,42,0.06)]"
+        className="rounded-xl border-2 border-accent bg-white p-8 text-left shadow-[0_1px_2px_rgba(15,23,42,0.06)]"
       >
         <p className="text-lg font-semibold text-slate-900">Thank you, we have your details.</p>
         <p className="mt-2 leading-relaxed text-slate-600">
@@ -69,7 +69,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_1px_2px_rgba(15,23,42,0.06)] sm:p-8">
+    <form onSubmit={handleSubmit} noValidate className="rounded-xl border-2 border-accent bg-white p-6 shadow-[0_1px_2px_rgba(15,23,42,0.06)] sm:p-8">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700">

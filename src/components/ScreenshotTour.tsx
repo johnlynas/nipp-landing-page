@@ -100,10 +100,10 @@ function PortalBar({ label }: { label?: string }) {
 
 function Frame({ shot }: { shot: Shot }) {
   return (
-    <figure className="group h-full">
+    <figure className="h-full">
       <div
         tabIndex={0}
-        className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06),0_12px_32px_-12px_rgba(15,23,42,0.18)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_2px_4px_rgba(15,23,42,0.08),0_20px_48px_-16px_rgba(15,23,42,0.28)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.06),0_12px_32px_-12px_rgba(15,23,42,0.18)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       >
         <div className="border-b border-navy-800">
           <PortalBar label={shot.title} />
@@ -113,7 +113,7 @@ function Frame({ shot }: { shot: Shot }) {
           alt={shot.alt}
           width={shot.width}
           height={shot.height}
-          className={`block w-full ${shot.featured ? 'h-auto' : 'aspect-[16/10] h-auto object-cover'}`}
+          className="block h-auto w-full"
           sizes="(max-width: 768px) 92vw, (max-width: 1024px) 44vw, 30vw"
           loading="lazy"
         />
@@ -137,8 +137,7 @@ export default function ScreenshotTour() {
             Inside the portal
           </h2>
           <p className="mt-4 max-w-[65ch] leading-relaxed text-slate-600">
-            Nine views from a working environment. Each one is a real screen, not a mock: both
-            dashboards, sign-in, the calendar, the organisation chart, system health, notifications,
+            Pages from a working environment. Dashboards, sign-in, the calendar, the organisation chart, system health, notifications,
             people administration and the platform map.
           </p>
         </Reveal>
