@@ -4,11 +4,13 @@ import Reveal from '@/components/Reveal';
 import Logo from '@/components/Logo';
 import ScreenshotTour from '@/components/ScreenshotTour';
 import AccessBand from '@/components/AccessBand';
+import AiIntegration from '@/components/AiIntegration';
 import ContactForm from '@/components/ContactForm';
 
 const nav = [
   { href: '#product', label: 'Inside the portal' },
   { href: '#access', label: 'Onboarding' },
+  { href: '#ai', label: 'AI Integration' },
 ];
 
 function Nav() {
@@ -100,12 +102,16 @@ const audiences = [
     title: 'Tenants',
     body: 'A focused self-service dashboard. Organization specific information, a shared calendar and timely notifications that matter to you.',
   },
+  {
+    title: 'AI Agents',
+    body: 'Your AI tooling gets first-class access too — a built-in agent, an MCP server and a skill file let agents read and act on the portal safely, within role permissions.',
+  },
 ];
 
 function RoleStrip() {
   return (
     <section aria-label="Who Property NI is for" className="border-b border-slate-200 bg-white">
-      <div className="mx-auto grid max-w-7xl gap-x-10 gap-y-8 px-5 py-14 sm:px-8 md:grid-cols-3 md:py-16">
+      <div className="mx-auto grid max-w-7xl gap-x-10 gap-y-8 px-5 py-14 sm:px-8 md:grid-cols-2 md:py-16 lg:grid-cols-4">
         {audiences.map((a, i) => (
           <Reveal key={a.title} delay={i * 80}>
             <div className="border-l-2 border-accent pl-5">
@@ -200,6 +206,7 @@ export default function LandingPage() {
       <RoleStrip />
       <ScreenshotTour />
       <AccessBand />
+      <AiIntegration />
       <ContactSection />
       <Footer />
     </main>

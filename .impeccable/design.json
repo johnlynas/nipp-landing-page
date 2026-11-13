@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-13T15:00:00Z",
+  "title": "Design System: Property NI",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Amber Accent",
+        "canonical": "#f5a623",
+        "tonalRamp": ["#7a4d10", "#9c6214", "#bf7c18", "#e0971e", "#f5a623", "#f8bd55", "#fbda8c", "#fdeecb"]
+      },
+      "navy-deep": {
+        "role": "neutral",
+        "displayName": "Navy Deep (chrome)",
+        "canonical": "#16223a",
+        "tonalRamp": ["#0b1220", "#121c30", "#16223a", "#1b2a4a", "#24355c", "#3a4f7a", "#5d74a0", "#93a5c6"]
+      },
+      "ink-900": {
+        "role": "neutral",
+        "displayName": "Ink (slate ramp)",
+        "canonical": "#0f172a",
+        "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#f8fafc"]
+      },
+      "danger": {
+        "role": "neutral",
+        "displayName": "Danger",
+        "canonical": "#dc3545",
+        "tonalRamp": ["#7f1d27", "#991b1b", "#c0263a", "#dc3545", "#e86b78", "#f09aa3", "#f8c9cf", "#fef2f2"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings; orientation, not drama." },
+      "title": { "displayName": "Title", "purpose": "Card and frame captions, step titles, audience names." },
+      "body": { "displayName": "Body", "purpose": "All supporting copy, measure capped at ~65ch." },
+      "label": { "displayName": "Label", "purpose": "Uppercase kicker and footer column headers — the only uppercase voice." }
+    },
+    "shadows": [
+      { "name": "frame", "value": "0 1px 2px rgba(15,23,42,0.06), 0 12px 32px -12px rgba(15,23,42,0.18)", "purpose": "Screenshot frames and login frame at rest." },
+      { "name": "hero", "value": "0 24px 64px -24px rgba(0,0,0,0.55)", "purpose": "Hero framed screen on navy bands." },
+      { "name": "micro", "value": "0 1px 2px rgba(15,23,42,0.15)", "purpose": "Buttons and form cards — a whisper of lift." }
+    ],
+    "motion": [
+      { "name": "reveal-ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Scroll-reveal: fade + 16px rise over 550ms, staggered 60–120ms." },
+      { "name": "state-transition", "value": "transition (Tailwind default 150ms ease)", "purpose": "Hover/focus/press state changes on buttons and links." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The amber door: CTA with dark-slate ink, 6px radius, micro shadow.",
+      "html": "<button class=\"ds-btn-primary\">Request access</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 28px; background: #f5a623; color: #1e293b; font-family: Inter, ui-sans-serif, sans-serif; font-size: 1rem; font-weight: 600; border: none; border-radius: 6px; box-shadow: 0 1px 2px rgba(15,23,42,0.15); cursor: pointer; transition: background 0.15s ease, transform 0.15s ease; } .ds-btn-primary:hover { background: #c2741a; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(245,166,35,0.6); } .ds-btn-primary:disabled { opacity: 0.6; cursor: wait; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "White field, hairline slate border, amber focus ring — the same door language as the CTA.",
+      "html": "<label class=\"ds-label\" for=\"ds-input\">Email address</label><input id=\"ds-input\" class=\"ds-input\" type=\"email\" placeholder=\"you@organization.org\" />",
+      "css": ".ds-label { display: block; margin-bottom: 8px; font-family: Inter, ui-sans-serif, sans-serif; font-size: 0.875rem; font-weight: 500; color: #334155; } .ds-input { width: 100%; padding: 12px 16px; background: #ffffff; color: #0f172a; font-family: Inter, ui-sans-serif, sans-serif; font-size: 1rem; border: 1px solid #cbd5e1; border-radius: 6px; transition: border-color 0.15s ease, box-shadow 0.15s ease; } .ds-input::placeholder { color: #94a3b8; } .ds-input:focus { outline: none; border-color: #3a4f7a; box-shadow: 0 0 0 2px rgba(245,166,35,0.6); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Sticky white nav link; ink-600 default, ink-900 hover.",
+      "html": "<a class=\"ds-navlink\" href=\"#\">Onboarding</a>",
+      "css": ".ds-navlink { font-family: Inter, ui-sans-serif, sans-serif; font-size: 0.875rem; font-weight: 500; color: #475569; text-decoration: none; transition: color 0.15s ease; } .ds-navlink:hover { color: #0f172a; } .ds-navlink:focus-visible { outline: 2px solid rgba(245,166,35,0.8); outline-offset: 2px; border-radius: 2px; }"
+    },
+    {
+      "name": "Screenshot Frame",
+      "kind": "custom",
+      "refersTo": "screenshot-frame",
+      "description": "The signature component: navy portal bar above the image, 12px-radius card with hairline border and frame shadow.",
+      "html": "<figure class=\"ds-shot\"><div class=\"ds-shot-bar\" aria-hidden=\"true\"><span class=\"ds-dot\"></span><span>Property NI</span><span class=\"ds-shot-label\">Admin dashboard</span></div><div class=\"ds-shot-body\"><img src=\"https://placehold.co/640x380/e2e8f0/64748b?text=Portal+screen\" alt=\"Example portal screen\" /></div></figure>",
+      "css": ".ds-shot { margin: 0; } .ds-shot-bar { display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; background: #16223a; border-bottom: 1px solid #24355c; } .ds-dot { width: 8px; height: 8px; border-radius: 9999px; background: #f5a623; } .ds-shot-bar span:nth-child(2) { font-family: Inter, ui-sans-serif, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.85); } .ds-shot-label { margin-left: auto; font-family: Inter, ui-sans-serif, sans-serif; font-size: 10px; color: #94a3b8; } .ds-shot-body { overflow: hidden; border-radius: 0 0 12px 12px; border: 1px solid #e2e8f0; border-top: none; background: #ffffff; box-shadow: 0 1px 2px rgba(15,23,42,0.06), 0 12px 32px -12px rgba(15,23,42,0.18); } .ds-shot-body img { display: block; width: 100%; height: auto; }"
+    },
+    {
+      "name": "Form Card (the door)",
+      "kind": "card",
+      "refersTo": "form-card",
+      "description": "The one card with a 2px amber border — the page's entrance.",
+      "html": "<div class=\"ds-formcard\"><p class=\"ds-formcard-title\">Tell us who you are</p><p class=\"ds-formcard-body\">Leave an email address or a mobile phone number (or both) and we will come back to you about access.</p></div>",
+      "css": ".ds-formcard { padding: 32px; background: #ffffff; border: 2px solid #f5a623; border-radius: 12px; box-shadow: 0 1px 2px rgba(15,23,42,0.06); } .ds-formcard-title { margin: 0 0 8px; font-family: Sora, Inter, sans-serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; color: #0f172a; } .ds-formcard-body { margin: 0; font-family: Inter, ui-sans-serif, sans-serif; font-size: 1rem; line-height: 1.625; color: #475569; }"
+    },
+    {
+      "name": "Error Alert",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Form-level alert: danger-tint fill, danger-border stroke, names the problem and the recovery.",
+      "html": "<div class=\"ds-alert\" role=\"alert\">We could not send that. Please try again in a moment, or email us directly from the footer.</div>",
+      "css": ".ds-alert { padding: 12px 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; font-family: Inter, ui-sans-serif, sans-serif; font-size: 0.875rem; font-weight: 500; color: #991b1b; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Operations Room",
+    "overview": "Property NI's landing page reads like the front of a well-run operations room: dark navy chrome frames light work surfaces, and everything is labelled plainly. The system is calm and precise — institutional in its discipline, warm only where it matters. There is exactly one accent color, and it behaves like a door handle: it appears on the CTA, on focus rings, and as thin framing edges that mark \"this is the entrance.\" Nothing glows, nothing animates for decoration; motion exists to confirm scroll position, not to entertain.\n\nThe page alternates full-bleed navy bands (hero, onboarding, contact) with white working surfaces (role strip, product tour, AI integration). Product screenshots never appear raw — they are always wrapped in a framed chrome that makes them read as the real portal, not stock imagery. Density is moderate: generous section padding (80–112px vertical), 65ch reading measures, and grid gaps wide enough that sections breathe without feeling empty.",
+    "keyCharacteristics": [
+      "Navy chrome / white work-surface alternation as the page's structural rhythm",
+      "A single amber accent reserved for action and focus — never decoration",
+      "Sora display over Inter body: confident headings, plain-spoken text",
+      "Every product screenshot framed in portal chrome with a navy top bar",
+      "Flat surfaces; shadows only to lift framed content off the page"
+    ],
+    "rules": [
+      { "name": "The Amber Door Rule", "body": "Amber appears only where a user acts or focuses: CTAs, focus rings, and the thin edges that mark an entry point (form card border, hero frame border). It never fills a band, never decorates a heading, and never carries white text. Its rarity is the point.", "section": "colors" },
+      { "name": "The Chrome Rule", "body": "Dark navy is chrome — it frames and grounds (hero, onboarding, contact, footer, portal bars). Light surfaces are where content lives. A section is either framed or working; it does not mix both in one surface.", "section": "colors" },
+      { "name": "The Plain-Spoken Rule", "body": "Copy names concrete things (\"no phone calls, no email threads\"). Type settings reinforce it: no gradient text, no italic emphasis, no display sizes below section level. If a sentence needs shouting, rewrite it.", "section": "typography" },
+      { "name": "The Framed-Content Rule", "body": "Shadows follow frames: anything wrapped in portal chrome (screenshots, the contact form) carries a shadow; flat sections never do. A shadow without a frame is decoration and does not ship.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do alternate navy chrome bands and white working surfaces; keep each section one or the other.",
+      "Do frame every product screenshot in the portal-bar card with the Frame shadow.",
+      "Do use amber only for action and focus (CTA, focus rings, door borders), with dark-slate ink on top.",
+      "Do cap body copy at ~65ch and keep section padding 80–112px so bands breathe.",
+      "Do honor prefers-reduced-motion: reveals render visible with no transition."
+    ],
+    "donts": [
+      "Don't put white text on amber; the accent's ink is dark slate, always.",
+      "Don't add a second accent color or use amber as a fill, background band, or heading treatment.",
+      "Don't place screenshots bare on the page without the portal-bar frame.",
+      "Don't introduce shadows on flat sections; shadows follow frames only.",
+      "Don't animate for decoration — motion is scroll-reveal and state confirmation only."
+    ]
+  }
+}
