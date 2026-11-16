@@ -44,7 +44,7 @@ Confirmed portal capabilities (from live screenshots): admin dashboard with oper
 
 ## Evidence on Hand
 
-Real screenshots of the working portal in `public/img/`: login, admin-dashboard, tenant-dashboard, calendar, org-chart, system-health, notifications, users, platform-map; AI agent chat: ai-help (learning roadmap), ai-what-can-it-do (capability breakdown), ai-org-status (live org summary). Logo assets in `design/` and `public/img/logo.png`. No testimonials, press, case studies, or benchmarks — absence is a fact, not a gap to fill.
+Real screenshots of the working portal in `public/img/`: login, admin-dashboard, tenant-dashboard, calendar, org-chart, system-health, notifications, users, platform-map; AI agent chat: ai-help (learning roadmap), ai-what-can-it-do (capability breakdown), ai-org-status (live org summary), ai-dashboard-chat (agent producing a detailed Platform organization report from the admin dashboard). Logo assets in `design/` and `public/img/logo.png`. No testimonials, press, case studies, or benchmarks — absence is a fact, not a gap to fill.
 
 ## Product Principles
 

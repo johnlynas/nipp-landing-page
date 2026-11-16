@@ -39,6 +39,15 @@ const layers: Layer[] = [
     body: 'The agent is backed by a skill file — a plain markdown playbook of how the portal works, its workflows and its conventions. It teaches any agent the right order to do things in, so answers follow best practice instead of guessing.',
     caption: 'Summarising organization status on request, with live data pulled straight from the portal.',
   },
+  {
+    src: '/img/ai-dashboard-chat.png',
+    alt: 'Portal agent chat integrated into the admin dashboard, producing a detailed report on the Platform organization through its tool calls',
+    width: 3080,
+    height: 1912,
+    title: 'One place where it all comes together',
+    body: 'The layers work together: the MCP server is the connection, the skill file is the manual, and the chat agent is where it all comes together for your team. Point your favourite AI tools at the portal and they already know how to use it.',
+    caption: 'In the admin dashboard, the agent pulls a full report on the Platform organization — teams, users, roles, permissions and resources — straight from its own tools.',
+  },
 ];
 
 /** Portal top bar — matches ScreenshotTour frames so screenshots read as the real product. */
@@ -111,14 +120,6 @@ export default function AiIntegration() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal>
-          <p className="mt-20 max-w-[70ch] border-t border-slate-200 pt-10 leading-relaxed text-slate-600">
-            The layers work together: the MCP server is the connection, the skill file is the
-            manual, and the chat agent is where it all comes together for your team. Point your
-            favourite AI tools at the portal and they already know how to use it.
-          </p>
-        </Reveal>
       </div>
     </section>
   );
