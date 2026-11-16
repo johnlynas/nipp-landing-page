@@ -56,8 +56,8 @@ const shots: Shot[] = [
   {
     src: '/img/system-health.png',
     alt: 'System health status board',
-    width: 1800,
-    height: 977,
+    width: 3456,
+    height: 2162,
     title: 'System health',
     body: 'A live view of backend services and dependency status, so operations spots a degraded component early.',
   },
